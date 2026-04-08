@@ -1,0 +1,26 @@
+Find intersection with count
+
+arr1 = [1,2,3,4,4,5,6,4,3,6]
+
+arr2 = [7,8,9,5,8,3,4,3,2,11]
+
+freq1 = {}
+
+freq2 = {}
+
+for ch in arr1:
+    freq1[ch] = freq1.get(ch,0) + 1
+
+for ch in arr2:
+    freq2[ch] = freq2.get(ch,0) + 1
+
+
+common = set(freq2) & set(freq1)
+
+result = {}
+
+
+for key in common:
+    result[key] = min(freq1[key],freq2[key])
+
+print(result)
